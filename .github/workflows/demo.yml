@@ -28,7 +28,7 @@ jobs:
       - name: Run model test
         run: |
           python train.py
-
+  
   display:
   runs-on: ubuntu-latest
   needs: build
