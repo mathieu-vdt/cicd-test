@@ -9,5 +9,5 @@ jobs:
         uses: actions/checkout@v2
 
       - run: echo "==================== REQUIREMENTS ===================="
-      - run: cat ./requirements.txt
+      - run: cat ${{ github.workspace }}/.github/workflows/requirements.txt
       - run: echo "======================================================"
