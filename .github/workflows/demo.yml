@@ -2,7 +2,7 @@ name: Flask application
 on:
   push:
     branches:
-      - exo9
+      - exo10
 
 jobs:
   build:
