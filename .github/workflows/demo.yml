@@ -51,6 +51,9 @@ jobs:
           name: Test-Reports
           path: ./artifacts
 
+      - name: List downloaded files
+        run: ls -R ./artifacts
+
       - name: Display images
         run: |
           echo "![Feature Importance](./artifacts/feature_importance.png)" >> $GITHUB_STEP_SUMMARY
