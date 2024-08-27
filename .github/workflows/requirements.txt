@@ -1,4 +1,4 @@
-# .github/workflows/requirements.txt
+# requirements.txt
 pandas
 flask
 scikit-learn
