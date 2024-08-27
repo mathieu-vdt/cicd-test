@@ -1,4 +1,4 @@
-name: Flask application
+name: Flask exo 10 application
 on:
   push:
     branches:
