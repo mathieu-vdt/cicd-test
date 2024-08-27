@@ -1,18 +1,28 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions
-on: [push]
+name: Flask application
+on:
+  push:
+    branches:
+      - exo9
+
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo " The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo " This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo " The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: List files in the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
         run: |
-          ls ${{ github.workspace }}
-      - run: echo " This job's status is ${{ job.status }}."
-      - run: python --version
-      - run: java --version
-      - run: mvn --version
-      - run: docker --version
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Flask application
+        run: |
+          export FLASK_APP=app.py
+          flask run
