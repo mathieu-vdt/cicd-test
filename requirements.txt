@@ -1,5 +1,0 @@
-# requirements.txt
-pandas
-flask
-scikit-learn
-pytest
